@@ -1,6 +1,8 @@
 #include <stdio.h>
 /**
- * This ais a program that prints the following
+ * main - prints with proper grammar, but the outcome is a piece of art
+ * adds new line
+ * return value - if 0 program is succesfull
  */
 int main(void)
 {
