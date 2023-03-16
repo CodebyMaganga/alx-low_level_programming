@@ -1,6 +1,7 @@
 #include <stdio.h>
 /**
- * This is a comment
+ * main - prints value of different types of variables
+ * return (0) - if successful
  */
 int main(void)
 {
