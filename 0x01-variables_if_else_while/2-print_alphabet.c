@@ -5,13 +5,12 @@
  */
 int main(void)
 {
-	char alp[26] = 'abcdefghijklmnopqrstuvwxyz'
 	int letter;
 
 	for (letter = 'A'; letter <= 'Z'; letter++)
 {
-		putchar(alp[letter]);
+		putchar(letter);
+		putchar('\n');
 }
-	putchar('\n');
 	return (0);
 }
