@@ -16,5 +16,6 @@ int main(void)
 {
 		putchar(upper_letter);
 }
+		putchar('\n');
 	return (0);
 }
