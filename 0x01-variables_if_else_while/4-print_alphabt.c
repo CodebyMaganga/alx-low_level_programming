@@ -9,12 +9,12 @@ int main(void)
 
 	for (chr = 'a'; chr <= 'z'; chr++)
 {
-	if (chr == 'e' | chr == 'q')
+		if ((chr == 'e') | (chr == 'q'))
 {
 	continue;
 }
-	putchar(chr);
+		putchar(chr);
 }
-	putchar('\n');
+		putchar('\n');
 	return (0);
 }
