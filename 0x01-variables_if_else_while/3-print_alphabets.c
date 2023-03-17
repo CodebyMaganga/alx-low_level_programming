@@ -9,8 +9,12 @@ int main(void)
 	int upper_letter;
 
 	for (letter = 'a'; letter <= 'z'; letter++)
+{
 		putchar(letter);
+}
 	for (upper_letter = 'A'; upper_letter <= 'Z'; upper_letter++)
+{
 		putchar(upper_letter);
-		return (0);
+}
+	return (0);
 }
