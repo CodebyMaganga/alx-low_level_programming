@@ -2,6 +2,7 @@
 /**
  * _isdigit- checks for digit 0-9
  * @c: char to be checked
+ *
  * Return: 0 if succesful
  */
 int _isdigit(int c)
