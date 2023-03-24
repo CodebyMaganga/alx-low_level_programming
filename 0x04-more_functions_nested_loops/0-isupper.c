@@ -1,13 +1,13 @@
 #include "main.h"
 /**
  * main- Checks for uppefrcase letters
- * Return: 0 if succesful
+ * Return: 1 if succesful
  */
 int _isupper(int c)
 {
-	if (c == 97 && c <= 122)
+	if (c == 65 && c <= 90)
 
-		return (0);
-	else
 		return (1);
+	else
+		return (0);
 }
