@@ -20,7 +20,7 @@ int _sqrt_recursion(int n)
 	}
 }
 /**
- * _sqrt_helper-  search for the square root in the range from 1 to the input number
+ * _sqrt_helper-  find square root in the range from 1 to the input number
  * @n: no. to find square root
  * @start: start from beginning
  * @end: endpoint
