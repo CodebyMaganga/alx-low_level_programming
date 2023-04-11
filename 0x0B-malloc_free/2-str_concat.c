@@ -8,10 +8,14 @@
  */
 char *str_concat(char *s1, char *s2)
 {
+	if ( s1 == NULL || s2 == NULL)
+	{
+		return (NULL);
+	}
+
 	int len1 = 0;
 	int len2 = 0;
 	int i;
-	char *p = (char *)malloc((len1 + len2 + 1) * sizeof(char));
 
 	while (s1[len1] != '\0')
 	{
@@ -21,6 +25,8 @@ char *str_concat(char *s1, char *s2)
 	{
 		len2++;
 	}
+	char *p = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+
 	for (i = 0; i < len1; i++)
 	{
 		p[i] = s1[i];
