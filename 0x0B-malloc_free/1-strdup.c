@@ -12,21 +12,21 @@ char *_strdup(char *str)
 	int i;
 	char *p = (char *)malloc((l + 1) * sizeof(char));
 
+	        if (str == NULL)
+        {
+                return (NULL);
+        }
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		l++;
 	}
 
-	if (str == NULL)
-	{
+	if (p == NULL)
 		return (NULL);
-	}
-	else
-	{
+
 	for (i = 0; i < l; i++)
 	{
 		p[i] = str[i];
-	}
 	}
 	p[l + 1] = '\0';
 	return (p);
