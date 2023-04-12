@@ -10,7 +10,7 @@ char *_strdup(char *str)
 {
 	int l = 0;
 	int i;
-	char *p = (char *)malloc(l * sizeof(char));
+	char *p = (char *)malloc((l + 1) * sizeof(char));
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
