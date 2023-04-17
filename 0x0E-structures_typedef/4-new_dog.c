@@ -2,6 +2,41 @@
 #include <stdlib.h>
 #include <string.h>
 /**
+ * _strlen- returns length of string
+ * @s: parameter to be evaluated
+ * Return: integer length of string
+ */
+int _strlen(char *s)
+{
+	int i = 0;
+
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+/**
+ * _strcpy- copies string
+ * @dest: string to be copies into
+ * @src: string to be copied
+ * Return: pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int a, len = 0;
+
+	while (src[i] != '\0')
+	{
+		len++;
+	}
+	for (i = 0; i < len; i++)
+	{
+		dest[i] = src[i];
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+/**
  * new_dog- creates a new dog
  * @name: 1st parameter
  * @age: 2nd parameter
