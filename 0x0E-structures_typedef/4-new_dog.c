@@ -1,6 +1,8 @@
 #include "dog.h"
 #include <stdlib.h>
-#include <string.h>
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+dog_t *new_dog(char *name, float age, char *owner);
 /**
  * _strlen- returns length of string
  * @s: parameter to be evaluated
@@ -23,7 +25,7 @@ int _strlen(char *s)
  */
 char *_strcpy(char *dest, char *src)
 {
-	int a, len = 0;
+	int i, len = 0;
 
 	while (src[i] != '\0')
 	{
@@ -45,29 +47,32 @@ char *_strcpy(char *dest, char *src)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *new_dog = malloc(sizeof(dog_t));
+	dog_t *p;
 
-	if (new_dog == NULL)
+	if (name == NULL || age < 0 || owner == NULL)
 		return (NULL);
 
-	new_dog->name = malloc(strlen(name) + 1);
-	if (new_dog->name == NULL)
+	p = malloc(sizeof(dog_t));
+	if (p == NULL)
+		return (NULL);
+
+	p->name = malloc(sizeof(char) * (_strlen(name) + 1));
+	if (p->name == NULL)
 	{
-		free(new_dog);
+		free(p);
 		return (NULL);
 	}
-	_strcpy(new_dog->name, name);
 
-	new_dog->owner = malloc(strlen(owner) + 1);
-	if (new_dog->owner == NULL)
+	p->owner = malloc(sizeof(char) * (_strlen(owner) + 1));
+	if (p->owner == NULL)
 	{
-		free(new_dog->name);
-		free(new_dog);
+		free(p->name);
+		free(p);
 		return (NULL);
 	}
-	_strcpy(new_dog->owner, owner);
+	p->name = _strcpy(p->name, name);
+	p->owner = _strcpy(p->owner, owner);
+	p->age = age;
 
-	new_dog->age = age;
-
-	return (new_dog);
+	return (p);
 }
