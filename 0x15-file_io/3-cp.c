@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 	to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
 	do {
-		if (from == -1 || r == -1)
+		if (from == -1 || readf ==  -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't read from file %s\n", argv[1]);
@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		writef = write(to, buffer, r);
+		writef = write(to, buffer, readf);
 		if (to == -1 || writef == -1)
 		{
 			dprintf(STDERR_FILENO,
@@ -96,8 +96,8 @@ int main(int argc, char *argv[])
 	} while (readf > 0);
 
 	free(buffer);
-	close_file(from);
-	close_file(to);
+	closefile(from);
+	closefile(to);
 
 	return (0);
 }
