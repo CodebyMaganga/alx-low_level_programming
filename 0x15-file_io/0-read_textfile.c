@@ -1,60 +1,28 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "main.h"
+#include <stdlib.h>
+
 /**
- * read_textfile - reads characters in a file
- * @filename: index filename
- * @letters: size of leters
- * Return: bytes read
+ * read_textfile- read characters in a file
+ * @filename: file being opened
+ * @letters: letters to be read
+ * Return: bytes read 0r 0 if it fails
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	if (filename == NULL)
-	{
+	char *buffer;
+	ssize_t descriptor;
+	ssize_t bytesRead;
+	ssize_t writtenBytes;
+
+	descriptor = open(filename, O_RDONLY);
+	if (descriptor == -1)
 		return (0);
-	}
+	buffer = malloc(sizeof(char) * letters);
+	bytesRead = read(fd, buf, letters);
+	writtenBytes = write(STDOUT_FILENO, buf, t);
 
-	FILE *fileptr = fopen(filename, 'r');
-
-		if (fileptr == NULL)
-		{
-			return (0);
-		}
-
-	char *buffer = malloc(letters + 1);
-
-	if (buffer == NULL)
-	{
-		fclose(fileptr);
-		return (0);
-	}
-
-	ssize_t bytesRead = fread(buffer, sizeof(char), letters, fileptr);
-
-	if (bytesRead < 0)
-	{
-		fclose(fileptr);
-		free(buffer);
-		return (0);
-	}
-
-	buffer[bytesRead] = '\0';
-
-	ssize_t writtenBytes = fwrite(buffer, sizeof(char), bytesRead, stdout);
-
-	if (writtenBytes < 0 || writtenBytes != bytesRead)
-	{
-		fclose(fileptr);
-		freee(buffer);
-		return (0);
-	}
-
-	fclose(fileptr);
 	free(buffer);
-
+	close(descriptor);
 	return (bytesRead);
 }
-
-
-
 
